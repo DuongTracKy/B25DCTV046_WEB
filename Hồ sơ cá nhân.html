@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+  <meta charset="UTF-8">
+    <title>Hồ Sơ Cá Nhân - Dương Trác Kỳ</title>
+  <style>
+    nav a {
+      margin-right: 15px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      color: brown;
+      font-weight: bold;
+    }
+  </style> 
+  </head>
+  <body>
+
+    <nav>
+      <a href="#about">Giới thiệu</a>
+      <a href="#skills-education">Kỹ năng & Học tập</a>
+      <a href="#contact">Liên hệ</a>
+    </nav>
+
+    <hr>
+
+    <header>
+      <h1>Hồ Sơ Cá Nhân: Dương Trác Kỳ</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXk1CscLH7fInL7wCoLbi2Df_5VnGG0VToISiW7h4QkQ&s=10" alt="University Logo" width="150">
+    <button id="btn-change-color">Đổi màu nền</button>
+    <p id="greeting" style="font-style: italic; color: #555;"></p>
+    </header>
+
+
+    <section id="about">
+      <h2>Giới thiệu bản thân</h2>
+      <p>
+      Xin chào! Tôi là <strong>Dương Trác Kỳ</strong>, hiện đang là <em>sinh viên năm 2</em> chuyên ngành AIoT. 
+      Tôi có đam mê mãnh liệt với việc <span style="color: red;">tạo ra những website đẹp mắt</span> và tối ưu. 
+      Mục tiêu của tôi là trở thành một <b>Full-stack Developer</b> giỏi trong <b>tương lai</b>.
+      </p>
+
+      <p>
+        Ghé thăm trang bài tập của tôi tại
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a> 
+        hoặc học cùng tôi trên
+      <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">Youtube</a>.
+      </p>
+
+    </section>
+
+
+    <section id="skills-education">
+      <h2>Kỹ năng & Quá trình học tập</h2>
+
+      <h3>Kỹ năng chuyên môn</h3>
+      <ul>
+        <li>HTML5 & CSS3</li>
+        <li>JavaScript cơ bản</li>
+        <li>Sử dụng Git & GitHub</li>
+      </ul>
+
+      <h3>Quá trình học tập</h3>
+      <ol>
+        <li>Tốt nghiệp THPT Nguyễn Gia Thiều (2022)</li>
+        <li>Nhập học Chuyên ngành AIoT - Đại học (2025)</li>
+        <li>Hoàn thành khóa học Responsive Web Design (2026)</li>
+      </ol>
+
+      <h3>Điểm thi tốt nghiệp THPT</h3>
+      <table border="3">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Tên môn học</th>
+            <th>Điểm số</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Toán</td>
+            <td>9.0</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Vật lý</td>
+            <td>10.0</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Tiếng Anh</td>
+            <td>7.5</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  <hr>
+
+    <aside>
+      <h2>Thông tin thêm</h2>
+    <p>Tôi luôn sẵn sàng tham gia các dự án mã nguồn mở hoặc cơ hội thực tập mới!</p>
+    </aside>
+
+  <hr>
+
+    <section id="contact">
+      <h2>Liên hệ với tôi</h2>
+      <form action="#" method="POST">
+        <div>
+        <label for="fullname">Họ và tên:</label><br>
+        <input type="text" id="fullname" name="fullname" required>
+        </div>
+      <br>
+        <div>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required>
+        </div>
+      <br>
+        <div>
+        <label for="topic">Chủ đề cần liên hệ:</label><br>
+          <select id="topic" name="topic">
+            <option value="job">Cơ hội việc làm / Thực tập</option>
+            <option value="project">Hợp tác dự án</option>
+            <option value="other">Thắc mắc khác</option>
+          </select>
+        </div>
+      <br>
+        <div>
+        <label for="message">Nội dung tin nhắn:</label><br>
+          <textarea id="message" name="message" rows="4" cols="30"></textarea>
+        </div>
+      <br>
+        <button type="submit">Gửi tin nhắn</button>
+      </form>
+    </section>
+    <footer>
+      <p>&copy; 2026 Duong Trac Ky. All rights reserved.</p>
+    </footer>
+
+    <script>
+
+      const greetingElement = document.getElementById('greeting');
+      
+      if (greetingElement) {
+
+        const currentHour = new Date().getHours();
+        let greetingText = '';
+
+
+        if (currentHour >= 5 && currentHour < 12) {
+          greetingText = 'Chúc bạn một buổi sáng tốt lành!';
+        } else if (currentHour >= 12 && currentHour < 18) {
+          greetingText = 'Chúc bạn một buổi chiều vui vẻ!';
+        } else {
+          greetingText = 'Chúc bạn một buổi tối an lành!';
+        }
+
+        greetingElement.innerText = greetingText;
+      }
+
+      const changeColorBtn = document.getElementById('btn-change-color');
+
+      if (changeColorBtn) {
+
+        const colors = ['white', '#e3f2fd', '#e8f5e9', '#fff3e0', '#f3e5f5'];
+        let colorIndex = 0;
+
+
+        changeColorBtn.addEventListener('click', function() {
+
+          colorIndex = (colorIndex + 1) % colors.length;
+          
+          document.body.style.backgroundColor = colors[colorIndex];
+        });
+      }
+    </script>
+  </body>
+</html>

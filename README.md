@@ -1,4 +1,6 @@
 # B25DCTV046_WEB
-Repo tạo ra với mục đích nộp bài tập thực hành Web 
-Học sinh: Dương Trác Kỳ 
-Lớp D25CQTV02-B
+Repository lưu trữ mã nguồn các bài tập thực hành môn Lập trình Web.
+## 👨‍💻 Thông Tin Sinh Viên
+* **Họ và tên:** Dương Trác Kỳ
+* **Mã sinh viên:** B25DCTV046
+* **Lớp:** D25CQTV02-B

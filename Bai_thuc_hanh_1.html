@@ -1,0 +1,3297 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Trác Kỳ Dương - Junior Frontend Developer & UI/UX Designer</title>
+    <meta name="title" content="Trác Kỳ Dương - Junior Frontend Developer & UI/UX Designer" />
+    <meta name="description" content="Portfolio cá nhân của Junior Frontend Developer & UI/UX Designer với HTML5 ngữ nghĩa, CSS thuần hiện đại, Dark/Light mode, hiệu ứng mượt mà và JavaScript tối ưu." />
+    <meta name="keywords" content="Frontend Developer, UI/UX Designer, React, TypeScript, JavaScript, CSS Grid, HTML5 Semantic, Web Performance" />
+    <meta name="author" content="Trác Kỳ Dương" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#2563eb" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://trackyduong.dev/" />
+    <meta property="og:title" content="Trác Kỳ Dương - Junior Frontend Developer & UI/UX Designer" />
+    <meta property="og:description" content="Portfolio cá nhân của Junior Frontend Developer & UI/UX Designer với HTML5 ngữ nghĩa, CSS thuần hiện đại, Dark/Light mode, hiệu ứng mượt mà và JavaScript tối ưu." />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Trác Kỳ Dương - Junior Frontend Developer & UI/UX Designer" />
+    <meta name="twitter:description" content="Portfolio cá nhân của Junior Frontend Developer & UI/UX Designer với HTML5, CSS thuần hiện đại, Dark/Light mode, hiệu ứng mượt mà và JavaScript tối ưu." />
+
+    <!-- Favicon SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%232563eb'/><text x='50' y='65' font-size='50' font-family='system-ui' font-weight='bold' text-anchor='middle' fill='white'>TKD</text></svg>" />
+
+    <!-- Stylesheet: Vanilla Modern CSS (Tương thích mở trực tiếp file:// hoặc Web server) -->
+    <style>
+/* ==========================================================================
+   STYLE.CSS - MODERN PORTFOLIO DESIGN SYSTEM
+   Junior Frontend Developer & UI/UX Designer Portfolio
+   Vanilla CSS with Custom Properties, CSS Grid, Flexbox & Micro-interactions
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Color Palette - Light Mode (Default) */
+  --bg-primary: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
+  --bg-card: #ffffff;
+  --bg-input: #ffffff;
+  --bg-overlay: rgba(15, 23, 42, 0.45);
+  --header-bg: rgba(248, 250, 252, 0.85);
+
+  /* Typography Colors */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+
+  /* Borders & Dividers */
+  --border-color: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --border-subtle: rgba(15, 23, 42, 0.06);
+
+  /* Brand Accents */
+  --accent-primary: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-active: #1e40af;
+  --accent-subtle: #eff6ff;
+  --accent-border: #bfdbfe;
+  --accent-glow: rgba(37, 99, 235, 0.25);
+
+  /* Semantic Feedback */
+  --color-success: #10b981;
+  --color-success-bg: #ecfdf5;
+  --color-error: #ef4444;
+  --color-error-bg: #fef2f2;
+  --color-warning: #f59e0b;
+
+  /* Typography Scales */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Spacing Scale */
+  --space-xs: 0.25rem;  /* 4px */
+  --space-sm: 0.5rem;   /* 8px */
+  --space-md: 1rem;     /* 16px */
+  --space-lg: 1.5rem;   /* 24px */
+  --space-xl: 2rem;     /* 32px */
+  --space-2xl: 3rem;    /* 48px */
+  --space-3xl: 4.5rem;  /* 72px */
+
+  /* Border Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --shadow-lift: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.06);
+  --shadow-glow: 0 0 20px var(--accent-glow);
+
+  /* Transitions */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout Constants */
+  --container-max-width: 1200px;
+  --header-height: 72px;
+}
+
+/* Dark Mode Tokens */
+[data-theme="dark"] {
+  --bg-primary: #090d16;
+  --bg-surface: #111827;
+  --bg-secondary: #1a2234;
+  --bg-tertiary: #243048;
+  --bg-card: #111827;
+  --bg-input: #151d30;
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+  --header-bg: rgba(9, 13, 22, 0.88);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #0f172a;
+
+  --border-color: #1e293b;
+  --border-hover: #334155;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+
+  --accent-primary: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-active: #93c5fd;
+  --accent-subtle: rgba(59, 130, 246, 0.12);
+  --accent-border: rgba(59, 130, 246, 0.3);
+  --accent-glow: rgba(59, 130, 246, 0.35);
+
+  --color-success: #34d399;
+  --color-success-bg: rgba(16, 185, 129, 0.12);
+  --color-error: #f87171;
+  --color-error-bg: rgba(239, 68, 68, 0.12);
+  --color-warning: #fbbf24;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+  --shadow-lift: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & BASE ELEMENTS
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  color-scheme: light dark;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Container Constraint */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+/* Section Common Structure */
+.section {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+  position: relative;
+}
+
+.section-header {
+  margin-bottom: var(--space-2xl);
+  text-align: center;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-kicker {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-primary);
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+  text-wrap: balance;
+}
+
+.section-description {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   3. HEADER & NAVIGATION (3-ZONE TOP BAR CONTRACT)
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--header-height);
+  background-color: var(--header-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  transition: border-color var(--transition-base), background-color var(--transition-base);
+}
+
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+/* Zone 1: Single text element wordmark */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.brand-dot {
+  color: var(--accent-primary);
+  font-size: 1.5rem;
+  line-height: 0.5;
+}
+
+/* Zone 2: Navigation Links */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.nav-link {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  position: relative;
+  padding: var(--space-xs) 0;
+  white-space: nowrap;
+}
+
+/* Subtle link hover underline micro-interaction */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-base);
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-link.active {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+/* Zone 3: Primary Actions (Theme Toggle & CTA) */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  transition: color var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-base);
+}
+
+.theme-toggle-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background-color: var(--bg-secondary);
+  transform: rotate(15deg);
+}
+
+.theme-icon-sun,
+.theme-icon-moon {
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+/* Toggle icon display based on theme */
+[data-theme="dark"] .theme-icon-sun {
+  display: block;
+}
+[data-theme="dark"] .theme-icon-moon {
+  display: none;
+}
+:root:not([data-theme="dark"]) .theme-icon-sun {
+  display: none;
+}
+:root:not([data-theme="dark"]) .theme-icon-moon {
+  display: block;
+}
+
+/* Mobile Hamburger Toggle */
+.hamburger-btn {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  position: relative;
+  z-index: 1002;
+}
+
+.hamburger-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 2px;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+/* Hamburger active transformation */
+.hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Navigation Drawer */
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-overlay);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 280px;
+  height: 100vh;
+  background-color: var(--bg-surface);
+  border-left: 1px solid var(--border-color);
+  z-index: 1001;
+  padding: var(--space-3xl) var(--space-xl) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  box-shadow: var(--shadow-lift);
+  transition: transform var(--transition-slow);
+}
+
+.mobile-nav-drawer.open {
+  transform: translateX(-320px);
+}
+
+.mobile-nav-overlay.open {
+  display: block;
+  opacity: 1;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.mobile-nav-link {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  display: block;
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: var(--accent-primary);
+  padding-left: var(--space-xs);
+}
+
+/* --------------------------------------------------------------------------
+   4. BUTTONS & MICRO-INTERACTIONS
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  user-select: none;
+}
+
+.btn-primary {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  box-shadow: 0 4px 12px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  background-color: var(--accent-active);
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+.btn-sm {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.8125rem;
+}
+
+.btn-lg {
+  padding: 0.85rem 1.75rem;
+  font-size: 1rem;
+}
+
+/* Ripple micro-interaction */
+.ripple-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. HERO / ABOUT SECTION
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding-top: calc(var(--space-3xl) + 1rem);
+  padding-bottom: var(--space-3xl);
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: var(--space-3xl);
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.hero-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.status-dot-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-success);
+  position: relative;
+}
+
+.status-dot-pulse::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background-color: var(--color-success);
+  opacity: 0.4;
+  animation: pulse-ring 2s infinite ease-out;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.hero-title {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  color: var(--text-primary);
+  text-wrap: balance;
+}
+
+.hero-title-accent {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-bio {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 580px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-xs);
+}
+
+/* Metric Strip (Adjacency to Hero Claim) */
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-color);
+  margin-top: var(--space-xs);
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-number {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.metric-label {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+/* Hero Visual / Avatar Card */
+.hero-visual-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-visual-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hero-visual-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+
+.hero-avatar-container {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-full);
+  margin: 0 auto var(--space-lg);
+  position: relative;
+  background: linear-gradient(135deg, var(--accent-subtle) 0%, var(--bg-secondary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--accent-border);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-avatar-svg {
+  width: 72px;
+  height: 72px;
+  color: var(--accent-primary);
+}
+
+.hero-code-snippet {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  overflow-x: auto;
+}
+
+.code-keyword { color: #ec4899; font-weight: 600; }
+.code-prop { color: var(--accent-primary); }
+.code-string { color: #10b981; }
+
+.hero-quick-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   6. SKILLS SECTION (GRID & FLEXBOX)
+   -------------------------------------------------------------------------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-lg);
+}
+
+.skill-category-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-border);
+}
+
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.skill-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--accent-subtle);
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.skill-category-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.875rem;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.skill-level-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.skill-bar-bg {
+  width: 100%;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--accent-primary) 0%, #6366f1 100%);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Animate skill bar when parent is revealed */
+.revealed .skill-bar-fill {
+  transform: scaleX(1);
+}
+
+/* --------------------------------------------------------------------------
+   7. PROJECTS SECTION & FILTER TABS
+   -------------------------------------------------------------------------- */
+/* Filter Segmented Control Tabs */
+.projects-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  padding: 4px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  max-width: fit-content;
+  margin: 0 auto var(--space-2xl);
+}
+
+.filter-btn {
+  padding: 0.5rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background-color: var(--bg-surface);
+  color: var(--accent-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-count {
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.75;
+  margin-left: var(--space-xs);
+}
+
+/* Projects Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--space-xl);
+}
+
+/* Project Card Architecture */
+.project-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base), opacity var(--transition-base);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+  border-color: var(--accent-border);
+}
+
+/* Filter hide / show animation */
+.project-card.is-hidden {
+  display: none;
+}
+
+/* Project Visual Frame */
+.project-media-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+/* Simulated App Mockup Graphic */
+.mockup-preview {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  position: relative;
+}
+
+.mockup-header-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: var(--space-sm);
+}
+
+.mockup-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.mockup-dot.red { background-color: #ef4444; }
+.mockup-dot.yellow { background-color: #f59e0b; }
+.mockup-dot.green { background-color: #10b981; }
+
+.mockup-content {
+  flex: 1;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  box-shadow: var(--shadow-sm);
+}
+
+.mockup-row {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.mockup-box {
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-secondary);
+  height: 20px;
+}
+
+/* Project Card Body */
+.project-card-body {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--space-md);
+}
+
+.project-meta-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.project-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+.project-description {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* Tech Tags (Zero-Pill Compliance: Clean text or quiet tag items) */
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: auto;
+}
+
+.tech-tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent-primary);
+  background-color: var(--accent-subtle);
+  border: 1px solid var(--accent-border);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Project Actions */
+.project-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-color);
+  margin-top: var(--space-xs);
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+.project-link:hover {
+  color: var(--accent-primary);
+}
+
+.project-link svg {
+  transition: transform var(--transition-fast);
+}
+
+.project-link:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* --------------------------------------------------------------------------
+   8. CONTACT FORM & INTERACTIVE SECTION
+   -------------------------------------------------------------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.contact-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.contact-info-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.channel-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.channel-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: var(--accent-subtle);
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.channel-title {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.channel-value {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Contact Form Container */
+.contact-form-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  position: relative;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label-required {
+  color: var(--color-error);
+  margin-left: 2px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  outline: none;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+/* Error State */
+.form-group.has-error .form-input,
+.form-group.has-error .form-textarea {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.error-message {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-error);
+  display: none;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.form-group.has-error .error-message {
+  display: flex;
+}
+
+/* Character Counter & Progress Bar for Textarea */
+.textarea-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.counter-progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.counter-progress-fill {
+  height: 100%;
+  width: 0%;
+  background-color: var(--accent-primary);
+  border-radius: var(--radius-full);
+  transition: width 0.1s linear, background-color var(--transition-fast);
+}
+
+.counter-progress-fill.warning {
+  background-color: var(--color-warning);
+}
+
+.counter-progress-fill.danger {
+  background-color: var(--color-error);
+}
+
+.char-counter-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Form Submit Feedback Alert */
+.form-alert {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  display: none;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.form-alert.success {
+  display: flex;
+  background-color: var(--color-success-bg);
+  border: 1px solid var(--color-success);
+  color: var(--color-success);
+}
+
+.form-alert.error {
+  display: flex;
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+}
+
+/* Spinner during submit */
+.btn-spinner {
+  display: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.btn.is-loading .btn-spinner {
+  display: block;
+}
+
+.btn.is-loading .btn-text {
+  opacity: 0.8;
+}
+
+/* --------------------------------------------------------------------------
+   9. FOOTER & BACK TO TOP
+   -------------------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.footer-brand {
+  max-width: 380px;
+}
+
+.footer-brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.footer-tagline {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.social-btn:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-border);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  padding-top: var(--space-xl);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* Back to Top Floating Button */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity var(--transition-base), visibility var(--transition-base), transform var(--transition-base), background-color var(--transition-fast);
+}
+
+.back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-3px);
+}
+
+/* --------------------------------------------------------------------------
+   10. SCROLL REVEAL ANIMATIONS (INTERSECTION OBSERVER)
+   -------------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay classes */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* --------------------------------------------------------------------------
+   11. TOAST NOTIFICATION COMPONENT
+   -------------------------------------------------------------------------- */
+.toast-container {
+  position: fixed;
+  top: 88px;
+  right: 24px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  min-width: 300px;
+  max-width: 400px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-lift);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  transform: translateX(120%);
+  transition: transform var(--transition-base), opacity var(--transition-base);
+  opacity: 0;
+}
+
+.toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.toast-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.toast-content {
+  flex: 1;
+}
+
+.toast-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.toast-message {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.toast.toast-success {
+  border-left: 4px solid var(--color-success);
+}
+.toast.toast-error {
+  border-left: 4px solid var(--color-error);
+}
+
+/* --------------------------------------------------------------------------
+   12. RESPONSIVE DESIGN & BREAKPOINTS
+   -------------------------------------------------------------------------- */
+/* Tablet Breakpoint (max-width: 768px) */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+    --space-3xl: 3.5rem;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-bio {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-metrics {
+    width: 100%;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-lg);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
+  }
+}
+
+/* Mobile Breakpoint (max-width: 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-metrics {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+
+  .metric-item {
+    padding: var(--space-xs) 0;
+  }
+
+  .contact-form-card {
+    padding: var(--space-lg);
+  }
+
+  .projects-filter-bar {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 6px;
+    border-radius: var(--radius-md);
+  }
+
+  .filter-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+
+  .back-to-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .toast-container {
+    left: 16px;
+    right: 16px;
+    top: 72px;
+  }
+
+  .toast {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+</style>
+
+    <!-- JSON-LD Structured Data for Person & Professional Profile -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Trác Kỳ Dương",
+      "jobTitle": "Senior Frontend Developer & UI/UX Designer",
+      "url": "https://trackyduong.dev",
+      "sameAs": [
+        "https://github.com",
+        "https://linkedin.com",
+        "https://twitter.com"
+      ],
+      "knowsAbout": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Next.js",
+        "UI/UX Design",
+        "Web Accessibility (WCAG)",
+        "Web Performance Optimization"
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <!-- Skip to main content link for Accessibility (WCAG) -->
+    <a href="#main-content" class="sr-only" style="position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: 9999;">
+      Chuyển đến nội dung chính
+    </a>
+
+    <!-- ======================================================================
+         SITE HEADER: 3-Zone Top Bar Contract
+         Zone 1: Wordmark Logo | Zone 2: Navigation Links | Zone 3: Actions
+         ====================================================================== -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <!-- Zone 1: Wordmark Logo -->
+        <a href="#hero" class="brand-logo" aria-label="Trác Kỳ Dương - Trang chủ">
+          <span>Trác Kỳ Dương</span>
+          <span class="brand-dot" aria-hidden="true">.</span>
+        </a>
+
+        <!-- Zone 2: Clean Semantic Navigation -->
+        <nav class="desktop-nav" aria-label="Điều hướng chính">
+          <a href="#hero" class="nav-link active">Giới thiệu</a>
+          <a href="#skills" class="nav-link">Kỹ năng</a>
+          <a href="#projects" class="nav-link">Dự án</a>
+          <a href="#contact" class="nav-link">Liên hệ</a>
+        </nav>
+
+        <!-- Zone 3: Primary Actions (Theme Toggle & CTA) -->
+        <div class="header-actions">
+          <!-- Dark/Light Mode Switch Button -->
+          <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Chuyển sang chế độ Tối" title="Chuyển chế độ Giao diện">
+            <!-- Moon Icon (shows in light mode) -->
+            <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <!-- Sun Icon (shows in dark mode) -->
+            <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+
+          <!-- Hire Me CTA Button -->
+          <a href="#contact" class="btn btn-primary btn-sm desktop-nav-cta">
+            <span>Hợp tác ngay</span>
+          </a>
+
+          <!-- Mobile Hamburger Toggle Button -->
+          <button id="hamburger-btn" class="hamburger-btn" aria-label="Mở danh mục điều hướng" aria-expanded="false" aria-controls="mobile-nav-drawer">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer & Background Overlay -->
+    <div id="mobile-nav-overlay" class="mobile-nav-overlay" aria-hidden="true"></div>
+    <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Menu di động">
+      <ul class="mobile-nav-list">
+        <li><a href="#hero" class="mobile-nav-link active">Giới thiệu</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Kỹ năng</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Dự án thực tế</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Liên hệ hợp tác</a></li>
+      </ul>
+      <div style="margin-top: auto; padding-top: var(--space-xl); border-top: 1px solid var(--border-color);">
+        <a href="#contact" class="btn btn-primary" style="width: 100%;">
+          <span>Bắt đầu dự án</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         MAIN CONTENT WRAPPER
+         ====================================================================== -->
+    <main id="main-content">
+      <!-- ------------------------------------------------------------------
+           SECTION 1: HERO & ABOUT
+           Split-Screen Hero with Editorial Typography, Bio, CTA & Visual Card
+           ------------------------------------------------------------------ -->
+      <section id="hero" class="section hero-section">
+        <div class="container hero-grid">
+          <!-- Left Column: Typography & CTAs -->
+          <div class="hero-content reveal">
+            <!-- Availability Status Badge -->
+            <div class="hero-status-tag">
+              <span class="status-dot-pulse" aria-hidden="true"></span>
+              <span>Sẵn sàng tiếp nhận dự án mới & vị trí Junior</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="hero-title">
+              Kiến tạo trải nghiệm Web <span class="hero-title-accent">chuẩn mực, mượt mà</span> & tối ưu hiệu năng.
+            </h1>
+
+            <!-- Bio Narrative -->
+            <p class="hero-bio">
+              Xin chào! Tôi là <strong>Trác Kỳ Dương</strong> — Junior Frontend Developer & UI/UX Designer với hơn 1 năm kinh nghiệm chuyên sâu về HTML5, CSS hiện đại và hệ sinh thái TypeScript/React. Tôi tập trung xây dựng các ứng dụng web tốc độ cao, khả năng tiếp cận chuẩn WCAG và giao diện trực quan tinh tế.
+            </p>
+
+            <!-- CTA Action Buttons -->
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary btn-lg">
+                <span>Khám phá Dự án</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#contact" class="btn btn-secondary btn-lg">
+                <span>Liên hệ trao đổi</span>
+              </a>
+            </div>
+
+            <!-- Claim-to-Proof Quantitative Metrics -->
+            <div class="hero-metrics">
+              <div class="metric-item">
+                <span class="metric-number">06+</span>
+                <span class="metric-label">Năm kinh nghiệm</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number">45+</span>
+                <span class="metric-label">Dự án hoàn thành</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number">99.8%</span>
+                <span class="metric-label">Độ hài lòng đối tác</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Visual Avatar & Tech Card -->
+          <div class="hero-visual-wrapper reveal delay-1">
+            <div class="hero-visual-card">
+              <!-- Avatar Vector Illustration -->
+              <div class="hero-avatar-container">
+                <svg class="hero-avatar-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+
+              <!-- Terminal / Code Snippet Preview -->
+              <div class="hero-code-snippet">
+                <div><span class="code-keyword">const</span> developer = {</div>
+                <div style="padding-left: 1rem;"><span class="code-prop">name</span>: <span class="code-string">'Trác Kỳ Dương'</span>,</div>
+                <div style="padding-left: 1rem;"><span class="code-prop">role</span>: <span class="code-string">'Junior Frontend Dev'</span>,</div>
+                <div style="padding-left: 1rem;"><span class="code-prop">stack</span>: [<span class="code-string">'React'</span>, <span class="code-string">'TypeScript'</span>, <span class="code-string">'CSS3'</span>],</div>
+                <div style="padding-left: 1rem;"><span class="code-prop">focus</span>: <span class="code-string">'Performance & A11y'</span></div>
+                <div>};</div>
+              </div>
+
+              <!-- Tech Separator Badges (Zero-Pill Compliance) -->
+              <div class="hero-quick-badges">
+                <span>TypeScript</span>
+                <span aria-hidden="true">·</span>
+                <span>React / Next.js</span>
+                <span aria-hidden="true">·</span>
+                <span>Design System</span>
+                <span aria-hidden="true">·</span>
+                <span>Web Vitals 100</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------------------------------------------------------------------
+           SECTION 2: SKILLS (GRID & FLEXBOX LAYOUT)
+           Structured into 4 domains with proficiency indicators
+           ------------------------------------------------------------------ -->
+      <section id="skills" class="section">
+        <div class="container">
+          <!-- Section Heading -->
+          <div class="section-header reveal">
+            <span class="section-kicker">Năng lực chuyên môn</span>
+            <h2 class="section-title">Kỹ năng kỹ thuật & Tư duy thiết kế</h2>
+            <p class="section-description">
+              Sở hữu nền tảng vững chắc từ tiêu chuẩn web cốt lõi đến kiến trúc frontend quy mô lớn, luôn chú trọng tối ưu hóa hiệu năng và trải nghiệm người dùng cuối.
+            </p>
+          </div>
+
+          <!-- Skills Grid: 4 Pillars -->
+          <div class="skills-grid">
+            <!-- Skill Category 1: Frontend Core -->
+            <article class="skill-category-card reveal delay-1">
+              <div class="skill-card-header">
+                <div class="skill-icon-badge" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <h3 class="skill-category-title">Core Web & Languages</h3>
+              </div>
+
+              <div class="skill-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">HTML5 Ngữ nghĩa & SEO</span>
+                    <span class="skill-level-text">98%</span>
+                  </div>
+                  <div class="skill-bar-bg" aria-hidden="true">
+                    <div class="skill-bar-fill" style="width: 98%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">CSS3 / Grid & Flexbox</span>
+                    <span class="skill-level-text">96%</span>
+                  </div>
+                  <div class="skill-bar-bg" aria-hidden="true">
+                    <div class="skill-bar-fill" style="width: 96%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">JavaScript ES6+ (Vanilla JS)</span>
+                    <span class="skill-level-text">95%</span>
+                  </div>
+                  <div class="skill-bar-bg" aria-hidden="true">
+                    <div class="skill-bar-fill" style="width: 95%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">TypeScript Nâng cao</span>
+                    <span class="skill-level-text">92%</span>
+                  </div>
+                  <div class="skill-bar-bg" aria-hidden="true">
+                    <div class="skill-bar-fill" style="width: 92%;"></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Skill Category 2: Frameworks & Ecosystem -->
+            <article class="skill-category-card reveal delay-2">
+              <div class="skill-card-header">
+                <div class="skill-icon-badge" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <h3 class="skill-category-title">Frameworks & State</h3>
+              </div>
+
+              <div class="skill-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">React (Hooks, Context, Suspense)</span>
+                    <span class="skill-level-text">95%</span>
+                  </div>
+                  <div class="skill-bar-bg" aria-hidden="true">
+                    <div class="skill-bar-fill" style="width: 95%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Next.js (App Router, SSR, SSG)</span>
+                    <span class="skill-level-text">90%</span>
+                  </div>
+                  <div class="skill-bar-bg" aria-hidden="true">
+                    <div class="skill-bar-fill" style="width: 90%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Zustand / Redux Toolkit</span>
+                    <span class="skill-level-text">88%</span>
+                  </div>
+                  <div class="skill-bar-bg" aria-hidden="true">
+                    <div class="skill-bar-fill" style="width: 88%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">RESTful APIs & GraphQL</span>
+                    <span class="skill-level-text">87%</span>
+                  </div>
+                  <div class="skill-bar-bg" aria-hidden="true">
+                    <div class="skill-bar-fill" style="width: 87%;"></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Skill Category 3: UI/UX & Design Systems -->
+            <article class="skill-category-card reveal delay-3">
+              <div class="skill-card-header">
+                <div class="skill-icon-badge" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m4.93 4.93 4.24 4.24"></path>
+                    <path d="m14.83 9.17 4.24-4.24"></path>
+                    <path d="m14.83 14.83 4.24 4.24"></path>
+                    <path d="m9.17 14.83-4.24 4.24"></path>
+                  </svg>
+                </div>
+                <h3 class="skill-category-title">UI/UX & Design Systems</h3>
+              </div>
+
+              <div class="skill-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Design Token & Atomic System</span>
+                    <span class="skill-level-text">92%</span>
+                  </div>
+                  <div class="skill-bar-bg" aria-hidden="true">
+                    <div class="skill-bar-fill" style="width: 92%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Figma to Pixel-Perfect Code</span>
+                    <span class="skill-level-text">96%</span>
+                  </div>
+                  <div class="skill-bar-bg" aria-hidden="true">
+                    <div class="skill-bar-fill" style="width: 96%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Khả năng tiếp cận (WCAG 2.1 AA)</span>
+                    <span class="skill-level-text">90%</span>
+                  </div>
+                  <div class="skill-bar-bg" aria-hidden="true">
+                    <div class="skill-bar-fill" style="width: 90%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Micro-interactions & Animations</span>
+                    <span class="skill-level-text">94%</span>
+                  </div>
+                  <div class="skill-bar-bg" aria-hidden="true">
+                    <div class="skill-bar-fill" style="width: 94%;"></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Skill Category 4: Performance & Tooling -->
+            <article class="skill-category-card reveal delay-4">
+              <div class="skill-card-header">
+                <div class="skill-icon-badge" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+                <h3 class="skill-category-title">Performance & Tooling</h3>
+              </div>
+
+              <div class="skill-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Core Web Vitals Optimization</span>
+                    <span class="skill-level-text">94%</span>
+                  </div>
+                  <div class="skill-bar-bg" aria-hidden="true">
+                    <div class="skill-bar-fill" style="width: 94%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Vite / Webpack Bundling</span>
+                    <span class="skill-level-text">90%</span>
+                  </div>
+                  <div class="skill-bar-bg" aria-hidden="true">
+                    <div class="skill-bar-fill" style="width: 90%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Git / CI/CD & Automated Testing</span>
+                    <span class="skill-level-text">88%</span>
+                  </div>
+                  <div class="skill-bar-bg" aria-hidden="true">
+                    <div class="skill-bar-fill" style="width: 88%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Node.js & Serverless APIs</span>
+                    <span class="skill-level-text">82%</span>
+                  </div>
+                  <div class="skill-bar-bg" aria-hidden="true">
+                    <div class="skill-bar-fill" style="width: 82%;"></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------------------------------------------------------------------
+           SECTION 3: PROJECTS (TAG FILTERING & CASE STUDIES)
+           At least 4 comprehensive projects with tags, demo & github links
+           ------------------------------------------------------------------ -->
+      <section id="projects" class="section">
+        <div class="container">
+          <!-- Section Heading -->
+          <div class="section-header reveal">
+            <span class="section-kicker">Dự án tiêu biểu</span>
+            <h2 class="section-title">Sản phẩm thực tế & Đóng góp kỹ thuật</h2>
+            <p class="section-description">
+              Các dự án được kiến trúc từ đầu với sự chú trọng đến khả năng mở rộng quy mô, hiệu năng tải trang và trải nghiệm người dùng liền mạch.
+            </p>
+          </div>
+
+          <!-- Interactive Filter Tabs (Buttons with dynamic click handlers) -->
+          <div class="projects-filter-bar reveal" role="tablist" aria-label="Bộ lọc công nghệ dự án">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+              Tất cả dự án <span class="filter-count"></span>
+            </button>
+            <button class="filter-btn" data-filter="react" role="tab" aria-selected="false">
+              React & Next.js <span class="filter-count"></span>
+            </button>
+            <button class="filter-btn" data-filter="typescript" role="tab" aria-selected="false">
+              TypeScript <span class="filter-count"></span>
+            </button>
+            <button class="filter-btn" data-filter="ui-ux" role="tab" aria-selected="false">
+              UI/UX & CSS <span class="filter-count"></span>
+            </button>
+            <button class="filter-btn" data-filter="realtime" role="tab" aria-selected="false">
+              Realtime & Canvas <span class="filter-count"></span>
+            </button>
+          </div>
+
+          <!-- Projects Grid Container -->
+          <div class="projects-grid" id="projects-grid">
+            <!-- Project 1: Cloud Metrics & SaaS Platform -->
+            <article class="project-card reveal delay-1" data-tags="react,typescript,ui-ux">
+              <div class="project-media-frame">
+                <!-- High-fidelity Vector UI Mockup -->
+                <div class="mockup-preview" aria-hidden="true">
+                  <div class="mockup-header-bar">
+                    <span class="mockup-dot red"></span>
+                    <span class="mockup-dot yellow"></span>
+                    <span class="mockup-dot green"></span>
+                    <span style="font-size: 10px; color: var(--text-muted); margin-left: auto;">novapulse.io</span>
+                  </div>
+                  <div class="mockup-content">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                      <span style="font-size: 11px; font-weight: 700; color: var(--accent-primary);">Cloud Telemetry Engine</span>
+                      <span style="font-size: 9px; color: #10b981; font-weight: 600;">99.99% Uptime</span>
+                    </div>
+                    <!-- Simulated Graph Bar Charts -->
+                    <div style="display: flex; align-items: flex-end; gap: 8px; height: 50px; padding: 4px 0; border-bottom: 1px dashed var(--border-color);">
+                      <div style="flex: 1; background: #60a5fa; height: 40%; border-radius: 2px;"></div>
+                      <div style="flex: 1; background: #3b82f6; height: 65%; border-radius: 2px;"></div>
+                      <div style="flex: 1; background: #2563eb; height: 90%; border-radius: 2px;"></div>
+                      <div style="flex: 1; background: #60a5fa; height: 50%; border-radius: 2px;"></div>
+                      <div style="flex: 1; background: #3b82f6; height: 80%; border-radius: 2px;"></div>
+                      <div style="flex: 1; background: #1d4ed8; height: 100%; border-radius: 2px;"></div>
+                    </div>
+                    <div style="display: flex; gap: 8px; margin-top: 6px;">
+                      <div class="mockup-box" style="flex: 1; height: 14px;"></div>
+                      <div class="mockup-box" style="flex: 2; height: 14px;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-card-body">
+                <!-- Clean Unboxed Metadata (Zero-Pill Compliance) -->
+                <div class="project-meta-row">
+                  <span>SaaS Dashboard</span>
+                  <span aria-hidden="true">·</span>
+                  <span>2026</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Lead Architect</span>
+                </div>
+
+                <h3 class="project-title">NovaPulse - Nền tảng Phân tích & Giám sát Điện toán Đám mây</h3>
+
+                <p class="project-description">
+                  Ứng dụng giám sát metrics thời gian thực với biểu đồ trực quan hóa dữ liệu lớn, giảm thời gian phản hồi DOM xuống dưới 16ms nhờ ảo hóa Virtual List và cơ chế state-batching.
+                </p>
+
+                <!-- Tech Tags -->
+                <div class="project-tech-tags">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">Chart.js</span>
+                  <span class="tech-tag">CSS Grid</span>
+                </div>
+
+                <!-- Links (Demo & GitHub) -->
+                <div class="project-actions">
+                  <a href="#contact" class="project-link" aria-label="Xem bản chạy thử của NovaPulse">
+                    <span>Xem Live Demo</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Mã nguồn GitHub dự án NovaPulse">
+                    <span>Mã nguồn Git</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2: Design System & Component Library -->
+            <article class="project-card reveal delay-2" data-tags="typescript,ui-ux">
+              <div class="project-media-frame">
+                <!-- High-fidelity Vector UI Mockup -->
+                <div class="mockup-preview" aria-hidden="true">
+                  <div class="mockup-header-bar">
+                    <span class="mockup-dot red"></span>
+                    <span class="mockup-dot yellow"></span>
+                    <span class="mockup-dot green"></span>
+                    <span style="font-size: 10px; color: var(--text-muted); margin-left: auto;">tokens.apexui.dev</span>
+                  </div>
+                  <div class="mockup-content">
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                      <div style="flex: 1; padding: 4px; border: 1px solid var(--accent-primary); border-radius: 4px; font-size: 9px; text-align: center; color: var(--accent-primary); font-weight: 600;">Button Primary</div>
+                      <div style="flex: 1; padding: 4px; background: var(--bg-secondary); border-radius: 4px; font-size: 9px; text-align: center; color: var(--text-secondary);">Segment Control</div>
+                    </div>
+                    <div style="display: flex; gap: 6px; align-items: center; margin-bottom: 6px;">
+                      <div style="width: 14px; height: 14px; border-radius: 3px; background: #2563eb;"></div>
+                      <div style="width: 14px; height: 14px; border-radius: 3px; background: #10b981;"></div>
+                      <div style="width: 14px; height: 14px; border-radius: 3px; background: #f59e0b;"></div>
+                      <div style="width: 14px; height: 14px; border-radius: 3px; background: #ef4444;"></div>
+                      <div style="font-size: 9px; font-family: var(--font-mono); color: var(--text-muted); margin-left: auto;">--color-tokens</div>
+                    </div>
+                    <div class="mockup-box" style="height: 18px; width: 85%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-card-body">
+                <!-- Clean Unboxed Metadata -->
+                <div class="project-meta-row">
+                  <span>Design Systems</span>
+                  <span aria-hidden="true">·</span>
+                  <span>2025</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Core Maintainer</span>
+                </div>
+
+                <h3 class="project-title">Apex Design System - Thư viện Thành phần Chuẩn hóa</h3>
+
+                <p class="project-description">
+                  Hệ thống 40+ linh kiện giao diện dễ tái sử dụng, tương thích chuẩn WCAG 2.1 AA, hỗ trợ theme linh hoạt qua CSS Custom Properties và đóng gói Tree-shaking dưới 28KB.
+                </p>
+
+                <!-- Tech Tags -->
+                <div class="project-tech-tags">
+                  <span class="tech-tag">HTML5/CSS3</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">Storybook</span>
+                  <span class="tech-tag">WCAG AA</span>
+                </div>
+
+                <!-- Links (Demo & GitHub) -->
+                <div class="project-actions">
+                  <a href="#contact" class="project-link" aria-label="Xem Storybook của Apex Design System">
+                    <span>Storybook Demo</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Mã nguồn GitHub Apex Design System">
+                    <span>Mã nguồn Git</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 3: Realtime Collaborative Canvas -->
+            <article class="project-card reveal delay-3" data-tags="typescript,realtime">
+              <div class="project-media-frame">
+                <!-- High-fidelity Vector UI Mockup -->
+                <div class="mockup-preview" aria-hidden="true">
+                  <div class="mockup-header-bar">
+                    <span class="mockup-dot red"></span>
+                    <span class="mockup-dot yellow"></span>
+                    <span class="mockup-dot green"></span>
+                    <span style="font-size: 10px; color: var(--text-muted); margin-left: auto;">canvas.flowsync.app</span>
+                  </div>
+                  <div class="mockup-content" style="position: relative; overflow: hidden;">
+                    <div style="display: flex; gap: 8px;">
+                      <div style="padding: 4px 8px; background: rgba(37,99,235,0.1); border: 1px solid var(--accent-primary); border-radius: 4px; font-size: 9px; font-weight: 600;">Node A: Ingestion</div>
+                      <div style="padding: 4px 8px; background: var(--bg-secondary); border-radius: 4px; font-size: 9px;">Node B: Transformer</div>
+                    </div>
+                    <!-- Simulated Cursor with User Label -->
+                    <div style="position: absolute; right: 28px; bottom: 18px; display: flex; align-items: center; gap: 4px;">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="#ec4899" stroke="#ffffff" stroke-width="1.5">
+                        <polygon points="3 3 10 21 14 14 21 10 3 3"></polygon>
+                      </svg>
+                      <span style="font-size: 8px; background: #ec4899; color: white; padding: 1px 4px; border-radius: 2px;">Sarah (Editing)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-card-body">
+                <!-- Clean Unboxed Metadata -->
+                <div class="project-meta-row">
+                  <span>Collaborative Workspace</span>
+                  <span aria-hidden="true">·</span>
+                  <span>2025</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Frontend Engineer</span>
+                </div>
+
+                <h3 class="project-title">FlowSync - Bảng vẽ Cộng tác Trực tuyến Thời gian thực</h3>
+
+                <p class="project-description">
+                  Ứng dụng sơ đồ tư duy đa người dùng hỗ trợ WebSockets, giải quyết xung đột bằng thuật toán CRDT và kết xuất Canvas mượt mà 60 FPS ngay cả với 5,000 nodes đồng thời.
+                </p>
+
+                <!-- Tech Tags -->
+                <div class="project-tech-tags">
+                  <span class="tech-tag">HTML5 Canvas</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">WebSockets</span>
+                  <span class="tech-tag">CRDT</span>
+                </div>
+
+                <!-- Links (Demo & GitHub) -->
+                <div class="project-actions">
+                  <a href="#contact" class="project-link" aria-label="Xem bản thử nghiệm FlowSync">
+                    <span>Xem Live Demo</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Mã nguồn GitHub FlowSync">
+                    <span>Mã nguồn Git</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 4: High-Performance Luxury E-Commerce -->
+            <article class="project-card reveal delay-4" data-tags="react,ui-ux">
+              <div class="project-media-frame">
+                <!-- High-fidelity Vector UI Mockup -->
+                <div class="mockup-preview" aria-hidden="true">
+                  <div class="mockup-header-bar">
+                    <span class="mockup-dot red"></span>
+                    <span class="mockup-dot yellow"></span>
+                    <span class="mockup-dot green"></span>
+                    <span style="font-size: 10px; color: var(--text-muted); margin-left: auto;">lumina-store.com</span>
+                  </div>
+                  <div class="mockup-content">
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                      <div style="width: 45px; height: 45px; background: var(--bg-secondary); border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                          <line x1="3" y1="6" x2="21" y2="6"></line>
+                          <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                      </div>
+                      <div style="flex: 1;">
+                        <div style="font-size: 10px; font-weight: 700;">Aura Minimalist Timepiece</div>
+                        <div style="font-size: 9px; color: var(--text-muted);">$480 · Ready to ship</div>
+                      </div>
+                    </div>
+                    <div class="mockup-box" style="height: 14px; margin-top: 6px;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-card-body">
+                <!-- Clean Unboxed Metadata -->
+                <div class="project-meta-row">
+                  <span>E-Commerce PWA</span>
+                  <span aria-hidden="true">·</span>
+                  <span>2024</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Frontend Lead</span>
+                </div>
+
+                <h3 class="project-title">Lumina - Nền tảng Thương mại Điện tử Thời trang Cao cấp</h3>
+
+                <p class="project-description">
+                  Trang web thương mại điện tử chuẩn SEO với điểm Google Lighthouse 100/100, quy trình thanh toán một chạm mượt mà và hỗ trợ ngoại tuyến mượt mà.
+                </p>
+
+                <!-- Tech Tags -->
+                <div class="project-tech-tags">
+                  <span class="tech-tag">Next.js</span>
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">CSS Modules</span>
+                  <span class="tech-tag">Stripe API</span>
+                </div>
+
+                <!-- Links (Demo & GitHub) -->
+                <div class="project-actions">
+                  <a href="#contact" class="project-link" aria-label="Xem sản phẩm Lumina">
+                    <span>Xem Live Demo</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Mã nguồn GitHub Lumina">
+                    <span>Mã nguồn Git</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------------------------------------------------------------------
+           SECTION 4: CONTACT FORM & CHANNELS
+           Real-time character counter, multi-condition validation, accessible inputs
+           ------------------------------------------------------------------ -->
+      <section id="contact" class="section">
+        <div class="container">
+          <!-- Section Heading -->
+          <div class="section-header reveal">
+            <span class="section-kicker">Kết nối hợp tác</span>
+            <h2 class="section-title">Bắt đầu trao đổi về dự án của bạn</h2>
+            <p class="section-description">
+              Bạn đang có ý tưởng sản phẩm mới, cần nâng cấp kiến trúc frontend hoặc tư vấn UI/UX? Hãy gửi thông điệp, tôi luôn sẵn sàng lắng nghe!
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <!-- Left Column: Contact Channels & Availability Info -->
+            <div class="contact-info-panel reveal delay-1">
+              <div class="contact-info-card">
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Thông tin liên hệ trực tiếp</h3>
+                <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6;">
+                  Thời gian phản hồi thông thường: dưới 24 giờ. Cam kết bảo mật thông tin và sẵn sàng ký cam kết NDA theo yêu cầu.
+                </p>
+
+                <div class="contact-channels">
+                  <!-- Channel 1: Email -->
+                  <div class="channel-item">
+                    <div class="channel-icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="channel-title">Email cá nhân</span>
+                      <a href="mailto:trackyduong.dev@gmail.com" class="channel-value" style="display: block;">trackyduong.dev@gmail.com</a>
+                    </div>
+                  </div>
+
+                  <!-- Channel 2: Location -->
+                  <div class="channel-item">
+                    <div class="channel-icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="channel-title">Địa điểm làm việc</span>
+                      <span class="channel-value" style="display: block;">Hà Nội / TP. Hồ Chí Minh / Toàn cầu (Remote)</span>
+                    </div>
+                  </div>
+
+                  <!-- Channel 3: Working Availability -->
+                  <div class="channel-item">
+                    <div class="channel-icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="channel-title">Hình thức làm việc</span>
+                      <span class="channel-value" style="display: block;">Full-time / Hợp đồng tư vấn / Dự án tự do</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Contact Form -->
+            <div class="contact-form-card reveal delay-2">
+              <form id="contact-form" class="contact-form" novalidate>
+                <!-- Field 1: Full Name -->
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">
+                    <span>Họ và tên <span class="label-required">*</span></span>
+                  </label>
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    class="form-input"
+                    placeholder="Ví dụ: Trác Kỳ Dương"
+                    autocomplete="name"
+                    required
+                    aria-describedby="name-error"
+                  />
+                  <span id="name-error" class="error-message" role="alert"></span>
+                </div>
+
+                <!-- Field 2: Email Address -->
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">
+                    <span>Địa chỉ Email <span class="label-required">*</span></span>
+                  </label>
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    class="form-input"
+                    placeholder="Ví dụ: duong.trac@company.com"
+                    autocomplete="email"
+                    required
+                    aria-describedby="email-error"
+                  />
+                  <span id="email-error" class="error-message" role="alert"></span>
+                </div>
+
+                <!-- Field 3: Subject -->
+                <div class="form-group">
+                  <label for="contact-subject" class="form-label">
+                    <span>Tiêu đề công việc <span class="label-required">*</span></span>
+                  </label>
+                  <input
+                    type="text"
+                    id="contact-subject"
+                    name="subject"
+                    class="form-input"
+                    placeholder="Ví dụ: Mời tham gia dự án Fintech Dashboard"
+                    required
+                    aria-describedby="subject-error"
+                  />
+                  <span id="subject-error" class="error-message" role="alert"></span>
+                </div>
+
+                <!-- Field 4: Message (with Real-time Counter & Progress Bar) -->
+                <div class="form-group">
+                  <label for="contact-message" class="form-label">
+                    <span>Nội dung chi tiết <span class="label-required">*</span></span>
+                  </label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    class="form-textarea"
+                    placeholder="Mô tả tóm tắt mục tiêu, phạm vi dự án hoặc những yêu cầu kỹ thuật cần hỗ trợ..."
+                    required
+                    aria-describedby="message-error char-counter-text"
+                  ></textarea>
+
+                  <!-- Character Counter & Progress Bar Indicator -->
+                  <div class="textarea-meta">
+                    <div class="counter-progress-bar" aria-hidden="true">
+                      <div id="counter-progress-fill" class="counter-progress-fill"></div>
+                    </div>
+                    <span id="char-counter-text" class="char-counter-text">0 / 500 ký tự (Tối thiểu 10)</span>
+                  </div>
+
+                  <span id="message-error" class="error-message" role="alert"></span>
+                </div>
+
+                <!-- Submit Button with Ripple & Spinner -->
+                <button type="submit" id="contact-submit-btn" class="btn btn-primary btn-lg" style="width: 100%;">
+                  <span class="btn-spinner" aria-hidden="true"></span>
+                  <span class="btn-text">Gửi thông điệp ngay</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======================================================================
+         SITE FOOTER: Semantic Footer with Dynamic Year & Social Links
+         ====================================================================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <!-- Brand Column -->
+          <div class="footer-brand">
+            <h3 class="footer-brand-title">Trác Kỳ Dương</h3>
+            <p class="footer-tagline">
+              Senior Frontend Developer & UI/UX Designer. Xây dựng web hiện đại với hiệu năng đỉnh cao, thiết kế trang nhã và mã nguồn bền vững.
+            </p>
+          </div>
+
+          <!-- Social Channels -->
+          <div class="footer-social-links" aria-label="Mạng xã hội">
+            <!-- GitHub -->
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Hồ sơ GitHub của Trác Kỳ Dương">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Hồ sơ LinkedIn của Trác Kỳ Dương">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+
+            <!-- Twitter / X -->
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Tài khoản Twitter/X của Trác Kỳ Dương">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© <span id="current-year">2026</span> Trác Kỳ Dương. Bản quyền được bảo lưu.</p>
+          <p>Thiết kế & Lập trình bằng HTML5, CSS3 Thuần & JavaScript ES6+.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Floating Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Cuộn về đầu trang" title="Về đầu trang">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </svg>
+    </button>
+
+    <!-- Accessible Toast Container -->
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+    <!-- Script: Modular Vanilla ES6+ JS (Hỗ trợ mở trực tiếp từ file hoặc web server) -->
+    <script>
+/**
+ * ==========================================================================
+ * MAIN.JS - VANILLA ES6+ PORTFOLIO SCRIPT
+ * Senior Frontend Developer & UI/UX Designer Portfolio
+ * Modular, performance-optimized, clean architecture without external libraries
+ * ==========================================================================
+ */
+
+'use strict';
+
+/**
+ * --------------------------------------------------------------------------
+ * MODULE 1: THEME MANAGER (DARK / LIGHT MODE)
+ * Handles theme toggling, persistence via localStorage, and system preference
+ * --------------------------------------------------------------------------
+ */
+const ThemeManager = (() => {
+  const THEME_STORAGE_KEY = 'portfolio_theme_preference';
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  const root = document.documentElement;
+
+  // Lấy theme đã lưu hoặc phát hiện hệ điều hành của người dùng
+  const getPreferredTheme = () => {
+    const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    if (savedTheme) {
+      return savedTheme;
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  };
+
+  // Áp dụng theme vào thẻ html
+  const applyTheme = (theme) => {
+    if (theme === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+      if (themeToggleBtn) {
+        themeToggleBtn.setAttribute('aria-label', 'Chuyển sang chế độ Sáng');
+        themeToggleBtn.setAttribute('title', 'Chuyển sang chế độ Sáng');
+      }
+    } else {
+      root.removeAttribute('data-theme');
+      if (themeToggleBtn) {
+        themeToggleBtn.setAttribute('aria-label', 'Chuyển sang chế độ Tối');
+        themeToggleBtn.setAttribute('title', 'Chuyển sang chế độ Tối');
+      }
+    }
+  };
+
+  // Khởi tạo theme
+  const init = () => {
+    const currentTheme = getPreferredTheme();
+    applyTheme(currentTheme);
+
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        const activeTheme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
+        
+        applyTheme(newTheme);
+        localStorage.setItem(THEME_STORAGE_KEY, newTheme);
+      });
+    }
+
+    // Lắng nghe thay đổi theme từ hệ điều hành nếu người dùng chưa set thủ công
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem(THEME_STORAGE_KEY)) {
+        applyTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+  };
+
+  return { init };
+})();
+
+/**
+ * --------------------------------------------------------------------------
+ * MODULE 2: MOBILE HAMBURGER MENU
+ * Handles opening/closing the drawer, overlay click, escape key & auto-close on link click
+ * --------------------------------------------------------------------------
+ */
+const MobileNav = (() => {
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const navDrawer = document.getElementById('mobile-nav-drawer');
+  const navOverlay = document.getElementById('mobile-nav-overlay');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+  const openMenu = () => {
+    if (!hamburgerBtn || !navDrawer || !navOverlay) return;
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    navDrawer.classList.add('open');
+    navOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden'; // Ngăn cuộn trang khi menu mở
+  };
+
+  const closeMenu = () => {
+    if (!hamburgerBtn || !navDrawer || !navOverlay) return;
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    navDrawer.classList.remove('open');
+    navOverlay.classList.remove('open');
+    document.body.style.overflow = ''; // Mở lại cuộn trang
+  };
+
+  const init = () => {
+    if (!hamburgerBtn || !navDrawer || !navOverlay) return;
+
+    // Toggle mở/đóng khi click icon hamburger
+    hamburgerBtn.addEventListener('click', () => {
+      const isOpen = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // Đóng menu khi click ra ngoài overlay
+    navOverlay.addEventListener('click', closeMenu);
+
+    // Tự động đóng menu khi click vào bất kỳ liên kết nào trong menu
+    navLinks.forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Đóng menu khi người dùng nhấn phím ESC (Accessibility)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && hamburgerBtn.getAttribute('aria-expanded') === 'true') {
+        closeMenu();
+      }
+    });
+  };
+
+  return { init };
+})();
+
+/**
+ * --------------------------------------------------------------------------
+ * MODULE 3: REAL-TIME CHARACTER COUNTER & PROGRESS BAR
+ * Displays real-time typing length, visual progress bar, and status coloring
+ * --------------------------------------------------------------------------
+ */
+const CharacterCounter = (() => {
+  const textarea = document.getElementById('contact-message');
+  const counterText = document.getElementById('char-counter-text');
+  const progressFill = document.getElementById('counter-progress-fill');
+  const MIN_CHARS = 10;
+  const MAX_CHARS = 500;
+
+  const update = () => {
+    if (!textarea || !counterText || !progressFill) return;
+
+    const length = textarea.value.length;
+    counterText.textContent = `${length} / ${MAX_CHARS} ký tự (Tối thiểu ${MIN_CHARS})`;
+
+    // Tính toán tỉ lệ phần trăm cho thanh tiến trình
+    const percentage = Math.min((length / MAX_CHARS) * 100, 100);
+    progressFill.style.width = `${percentage}%`;
+
+    // Cập nhật màu sắc thanh tiến trình dựa trên ngưỡng
+    progressFill.classList.remove('warning', 'danger');
+    if (length > MAX_CHARS * 0.9) {
+      progressFill.classList.add('danger');
+    } else if (length > MAX_CHARS * 0.75) {
+      progressFill.classList.add('warning');
+    }
+  };
+
+  const init = () => {
+    if (!textarea) return;
+    textarea.setAttribute('maxlength', MAX_CHARS.toString());
+    textarea.addEventListener('input', update);
+    update(); // Khởi tạo ban đầu
+  };
+
+  return { init, update };
+})();
+
+/**
+ * --------------------------------------------------------------------------
+ * MODULE 4: TOAST NOTIFICATIONS
+ * Provides accessible feedback toasts for user interactions
+ * --------------------------------------------------------------------------
+ */
+const ToastManager = (() => {
+  const container = document.getElementById('toast-container');
+
+  const show = (title, message, type = 'success', duration = 4000) => {
+    if (!container) return;
+
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.setAttribute('role', 'alert');
+    toast.setAttribute('aria-live', 'assertive');
+
+    const iconSvg = type === 'success'
+      ? `<svg class="toast-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-success);"><polyline points="20 6 9 17 4 12"></polyline></svg>`
+      : `<svg class="toast-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-error);"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>`;
+
+    toast.innerHTML = `
+      ${iconSvg}
+      <div class="toast-content">
+        <h4 class="toast-title">${title}</h4>
+        <p class="toast-message">${message}</p>
+      </div>
+    `;
+
+    container.appendChild(toast);
+
+    // Kích hoạt animation hiện ra
+    requestAnimationFrame(() => {
+      toast.classList.add('show');
+    });
+
+    // Tự biến mất sau duration
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => {
+        toast.remove();
+      }, 300);
+    }, duration);
+  };
+
+  return { show };
+})();
+
+/**
+ * --------------------------------------------------------------------------
+ * MODULE 5: MULTI-CONDITION FORM VALIDATION
+ * Validates Name, Email (RFC 5322 regex), Message (>=10 chars) with inline feedback
+ * --------------------------------------------------------------------------
+ */
+const FormValidator = (() => {
+  const form = document.getElementById('contact-form');
+  const nameInput = document.getElementById('contact-name');
+  const emailInput = document.getElementById('contact-email');
+  const subjectInput = document.getElementById('contact-subject');
+  const messageInput = document.getElementById('contact-message');
+  const submitBtn = document.getElementById('contact-submit-btn');
+
+  // RFC 5322 Standard Email Regex
+  const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+
+  // Hiển thị lỗi inline
+  const showError = (inputElement, errorElementId, message) => {
+    const parentGroup = inputElement.closest('.form-group');
+    const errorEl = document.getElementById(errorElementId);
+    if (parentGroup) parentGroup.classList.add('has-error');
+    if (errorEl) {
+      errorEl.textContent = message;
+      inputElement.setAttribute('aria-invalid', 'true');
+    }
+  };
+
+  // Xóa lỗi inline
+  const clearError = (inputElement, errorElementId) => {
+    const parentGroup = inputElement.closest('.form-group');
+    const errorEl = document.getElementById(errorElementId);
+    if (parentGroup) parentGroup.classList.remove('has-error');
+    if (errorEl) {
+      errorEl.textContent = '';
+      inputElement.removeAttribute('aria-invalid');
+    }
+  };
+
+  // Kiểm tra tính hợp lệ từng trường
+  const validateField = (field) => {
+    if (!field) return true;
+
+    if (field === nameInput) {
+      const val = nameInput.value.trim();
+      if (!val) {
+        showError(nameInput, 'name-error', 'Vui lòng nhập họ và tên của bạn.');
+        return false;
+      }
+      if (val.length < 2) {
+        showError(nameInput, 'name-error', 'Họ và tên cần tối thiểu 2 ký tự.');
+        return false;
+      }
+      clearError(nameInput, 'name-error');
+      return true;
+    }
+
+    if (field === emailInput) {
+      const val = emailInput.value.trim();
+      if (!val) {
+        showError(emailInput, 'email-error', 'Vui lòng nhập địa chỉ email.');
+        return false;
+      }
+      if (!EMAIL_REGEX.test(val)) {
+        showError(emailInput, 'email-error', 'Địa chỉ email không hợp lệ (Ví dụ: name@example.com).');
+        return false;
+      }
+      clearError(emailInput, 'email-error');
+      return true;
+    }
+
+    if (field === subjectInput) {
+      const val = subjectInput.value.trim();
+      if (!val) {
+        showError(subjectInput, 'subject-error', 'Vui lòng nhập tiêu đề tin nhắn.');
+        return false;
+      }
+      clearError(subjectInput, 'subject-error');
+      return true;
+    }
+
+    if (field === messageInput) {
+      const val = messageInput.value.trim();
+      if (!val) {
+        showError(messageInput, 'message-error', 'Vui lòng nhập nội dung tin nhắn.');
+        return false;
+      }
+      if (val.length < 10) {
+        showError(messageInput, 'message-error', `Nội dung cần tối thiểu 10 ký tự (Hiện tại: ${val.length} ký tự).`);
+        return false;
+      }
+      clearError(messageInput, 'message-error');
+      return true;
+    }
+
+    return true;
+  };
+
+  const init = () => {
+    if (!form) return;
+
+    // Validate ngay khi người dùng blur khỏi trường nhập
+    [nameInput, emailInput, subjectInput, messageInput].forEach((input) => {
+      if (!input) return;
+      input.addEventListener('blur', () => validateField(input));
+      input.addEventListener('input', () => {
+        // Tự động clear lỗi khi người dùng bắt đầu chỉnh sửa lại
+        const parent = input.closest('.form-group');
+        if (parent && parent.classList.contains('has-error')) {
+          validateField(input);
+        }
+      });
+    });
+
+    // Xử lý gửi form
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const isNameValid = validateField(nameInput);
+      const isEmailValid = validateField(emailInput);
+      const isSubjectValid = validateField(subjectInput);
+      const isMessageValid = validateField(messageInput);
+
+      if (!isNameValid || !isEmailValid || !isSubjectValid || !isMessageValid) {
+        // Focus vào trường đầu tiên bị lỗi
+        const firstErrorInput = form.querySelector('.has-error input, .has-error textarea');
+        if (firstErrorInput) firstErrorInput.focus();
+        ToastManager.show('Chưa hoàn tất biểu mẫu', 'Vui lòng kiểm tra và sửa các thông tin báo lỗi màu đỏ.', 'error');
+        return;
+      }
+
+      // Giả lập trạng thái gửi (Loading State)
+      if (submitBtn) {
+        submitBtn.classList.add('is-loading');
+        submitBtn.disabled = true;
+      }
+
+      setTimeout(() => {
+        if (submitBtn) {
+          submitBtn.classList.remove('is-loading');
+          submitBtn.disabled = false;
+        }
+
+        // Reset form & counter
+        const senderName = nameInput.value.trim();
+        form.reset();
+        CharacterCounter.update();
+
+        // Xóa class lỗi nếu có
+        [nameInput, emailInput, subjectInput, messageInput].forEach((input) => {
+          if (input) clearError(input, input.id.replace('contact-', '') + '-error');
+        });
+
+        // Thông báo thành công
+        ToastManager.show(
+          'Gửi tin nhắn thành công!',
+          `Cảm ơn ${senderName}. Tôi đã nhận được thông tin và sẽ phản hồi trong vòng 24 giờ.`,
+          'success',
+          6000
+        );
+      }, 1000);
+    });
+  };
+
+  return { init };
+})();
+
+/**
+ * --------------------------------------------------------------------------
+ * MODULE 6: PROJECT FILTER BY TAG
+ * Interactive segmented filter tabs with dynamic counter and transition animations
+ * --------------------------------------------------------------------------
+ */
+const ProjectFilter = (() => {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  const filterProjects = (category) => {
+    projectCards.forEach((card) => {
+      const cardTags = card.getAttribute('data-tags') || '';
+      const tagsArray = cardTags.split(',').map((t) => t.trim().toLowerCase());
+
+      if (category === 'all' || tagsArray.includes(category.toLowerCase())) {
+        card.classList.remove('is-hidden');
+        // Kích hoạt nhẹ hiệu ứng fade-in
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(12px)';
+        requestAnimationFrame(() => {
+          card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        });
+      } else {
+        card.classList.add('is-hidden');
+      }
+    });
+  };
+
+  const updateCounts = () => {
+    filterButtons.forEach((btn) => {
+      const cat = btn.getAttribute('data-filter') || 'all';
+      let count = 0;
+      projectCards.forEach((card) => {
+        const cardTags = card.getAttribute('data-tags') || '';
+        const tagsArray = cardTags.split(',').map((t) => t.trim().toLowerCase());
+        if (cat === 'all' || tagsArray.includes(cat.toLowerCase())) {
+          count++;
+        }
+      });
+
+      const countSpan = btn.querySelector('.filter-count');
+      if (countSpan) {
+        countSpan.textContent = `(${count})`;
+      }
+    });
+  };
+
+  const init = () => {
+    if (!filterButtons.length || !projectCards.length) return;
+
+    updateCounts();
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const selectedFilter = btn.getAttribute('data-filter') || 'all';
+        filterProjects(selectedFilter);
+      });
+    });
+  };
+
+  return { init };
+})();
+
+/**
+ * --------------------------------------------------------------------------
+ * MODULE 7: SCROLL REVEAL (INTERSECTION OBSERVER API)
+ * Smooth reveal animations as sections and cards enter the viewport
+ * --------------------------------------------------------------------------
+ */
+const ScrollReveal = (() => {
+  const init = () => {
+    const revealElements = document.querySelectorAll('.reveal');
+    if (!revealElements.length) return;
+
+    // Kiểm tra hỗ trợ IntersectionObserver
+    if (!('IntersectionObserver' in window)) {
+      revealElements.forEach((el) => el.classList.add('revealed'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            obs.unobserve(entry.target); // Chỉ kích hoạt một lần
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+  };
+
+  return { init };
+})();
+
+/**
+ * --------------------------------------------------------------------------
+ * MODULE 8: ACTIVE NAVIGATION ON SCROLL (SCROLLSPY)
+ * Highlights the current active section in desktop and mobile navigation
+ * --------------------------------------------------------------------------
+ */
+const ScrollSpy = (() => {
+  const sections = document.querySelectorAll('section[id]');
+  const desktopLinks = document.querySelectorAll('.desktop-nav .nav-link');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+  const onScroll = () => {
+    const scrollY = window.pageYOffset;
+
+    sections.forEach((section) => {
+      const sectionHeight = section.offsetHeight;
+      const sectionTop = section.offsetTop - 100;
+      const sectionId = section.getAttribute('id');
+
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        desktopLinks.forEach((link) => {
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+
+        mobileLinks.forEach((link) => {
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    });
+  };
+
+  const init = () => {
+    if (!sections.length) return;
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  };
+
+  return { init };
+})();
+
+/**
+ * --------------------------------------------------------------------------
+ * MODULE 9: BACK TO TOP BUTTON
+ * Shows floating button when user scrolls down and smoothly scrolls back up
+ * --------------------------------------------------------------------------
+ */
+const BackToTop = (() => {
+  const btn = document.getElementById('back-to-top');
+
+  const init = () => {
+    if (!btn) return;
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (window.pageYOffset > 380) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+      },
+      { passive: true }
+    );
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    });
+  };
+
+  return { init };
+})();
+
+/**
+ * --------------------------------------------------------------------------
+ * MODULE 10: DYNAMIC FOOTER YEAR
+ * Automatically updates current copyright year via Date object
+ * --------------------------------------------------------------------------
+ */
+const FooterYear = (() => {
+  const init = () => {
+    const yearElement = document.getElementById('current-year');
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear().toString();
+    }
+  };
+
+  return { init };
+})();
+
+/**
+ * --------------------------------------------------------------------------
+ * MODULE 11: BUTTON RIPPLE EFFECT
+ * Modern tactile feedback ripple effect when clicking buttons
+ * --------------------------------------------------------------------------
+ */
+const ButtonRipple = (() => {
+  const init = () => {
+    const buttons = document.querySelectorAll('.btn');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', function (e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const ripple = document.createElement('span');
+        ripple.className = 'ripple-circle';
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+
+        this.appendChild(ripple);
+
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+  };
+
+  return { init };
+})();
+
+/**
+ * --------------------------------------------------------------------------
+ * APP INITIALIZATION
+ * Runs all modular services on DOMContentLoaded
+ * --------------------------------------------------------------------------
+ */
+const startApp = () => {
+  ThemeManager.init();
+  MobileNav.init();
+  CharacterCounter.init();
+  FormValidator.init();
+  ProjectFilter.init();
+  ScrollReveal.init();
+  ScrollSpy.init();
+  BackToTop.init();
+  FooterYear.init();
+  ButtonRipple.init();
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', startApp);
+} else {
+  startApp();
+}
+
+</script>
+  </body>
+</html>

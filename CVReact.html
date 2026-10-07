@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang CV Cá Nhân - ReactJS</title>
+  
+  <!-- Nhúng thư viện React & Babel -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; margin: 0; padding: 20px; display: flex; justify-content: center; }
+    .cv-container { width: 100%; max-width: 700px; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .header { text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 15px; margin-bottom: 20px; }
+    .header h1 { margin: 0; color: #2c3e50; }
+    .header p { margin: 5px 0; color: #7f8c8d; }
+    .section { margin-bottom: 25px; }
+    .section-title { color: #3498db; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 10px; }
+    .skills-list { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
+    .skill-item { background: #e8f4fc; color: #2980b9; padding: 6px 12px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; }
+    .project-item { background: #fafafa; padding: 12px; border-left: 4px solid #3498db; margin-bottom: 10px; border-radius: 4px; }
+    .project-item h4 { margin: 0 0 5px 0; color: #2c3e50; }
+    .project-item p { margin: 0; color: #555; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+    // 1. COMPONENT HEADER
+    function Header({ name, title, email, phone }) {
+      return (
+        <div className="header">
+          <h1>{name}</h1>
+          <p><strong>{title}</strong></p>
+          <p>Email: {email} | SĐT: {phone}</p>
+        </div>
+      );
+    }
+
+    // 2. COMPONENT SECTION (Dùng children)
+    function Section({ title, children }) {
+      return (
+        <div className="section">
+          <h2 className="section-title">{title}</h2>
+          {children} {/* Dùng children để bọc nội dung truyền vào */}
+        </div>
+      );
+    }
+
+    // 3. COMPONENT SKILL LIST (Nhận mảng qua props)
+    function SkillList({ skills }) {
+      return (
+        <ul className="skills-list">
+          {skills.map((skill, index) => (
+            <li key={index} className="skill-item">{skill}</li>
+          ))}
+        </ul>
+      );
+    }
+
+    // 4. COMPONENT PROJECT LIST (Nhận mảng qua props)
+    function ProjectList({ projects }) {
+      return (
+        <div>
+          {projects.map((proj) => (
+            <div key={proj.id} className="project-item">
+              <h4>{proj.name}</h4>
+              <p>{proj.description}</p>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    // COMPONENT CHÍNH
+    function App() {
+      // Dữ liệu mảng kỹ năng & dự án
+      const skillsData = ["HTML5/CSS3", "JavaScript (ES6+)", "ReactJS", "Git & GitHub", "Responsive Design"];
+      
+      const projectsData = [
+        { id: 1, name: "Virtual Calculator", description: "Ứng dụng máy tính bỏ túi xây dựng bằng ReactJS, quản lý State và Component." },
+        { id: 2, name: "Trang CV Cá Nhân", description: "Trang ứng tuyển cá nhân sử dụng ReactJS với Props và children component." }
+      ];
+
+      return (
+        <div className="cv-container">
+          {/* Component 1: Header */}
+          <Header 
+            name="Trác Kỳ Dương" 
+            title="Frontend-Developer" 
+            email="duongtracky@.com" 
+            phone="0912 345 678" 
+          />
+
+          {/* Component 2: Section bọc giới thiệu */}
+          <Section title="Giới Thiệu Bản Thân">
+            <p>Sinh viên CNTT đam mê phát triển giao diện người dùng mượt mà và tối ưu trải nghiệm bằng ReactJS.</p>
+          </Section>
+
+          {/* Component 2 bọc Component 3 (SkillList nhận props mảng) */}
+          <Section title="Kỹ Năng Chuyên Môn">
+            <SkillList skills={skillsData} />
+          </Section>
+
+          {/* Component 2 bọc Component 4 (ProjectList nhận props mảng) */}
+          <Section title="Dự Án Đã Làm">
+            <ProjectList projects={projectsData} />
+          </Section>
+        </div>
+      );
+    }
+
+    // Hiển thị lên HTML
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
